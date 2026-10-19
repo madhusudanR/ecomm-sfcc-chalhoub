@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="RefArchSharedLibrary">
+  <content content-id="pdp-delivery">
+    <display-name xml:lang="x-default">PDP Delivery</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body" xml:lang="x-default">&lt;p&gt;&lt;img alt=&quot;Delivery PDP&quot; src=&quot;delivery/truck.png?$staticlink$&quot; title=&quot;&quot; /&gt;&lt;/p&gt;</custom-attribute>
+    </custom-attributes>
+    <folder-links>
+    </folder-links>
+  </content>
+</library>

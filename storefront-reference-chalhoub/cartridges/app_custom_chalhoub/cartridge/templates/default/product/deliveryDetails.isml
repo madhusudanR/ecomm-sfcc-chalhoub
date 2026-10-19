@@ -3,6 +3,7 @@
     Display delivery content only when fulfilment is enabled
     and the fulfilment service has returned a successful response.
 </iscomment>
+<isinclude template="/components/modules" />
 <isif condition="${pdict.enabled && !pdict.error && pdict.deliveryInfo && pdict.deliveryInfo.tier}">
 
     <div class="delivery-fulfillment">
@@ -67,7 +68,8 @@
         </div>
 
         <div class="delivery-fulfillment__image" aria-hidden="true">
-            <img src="${pdict.deliveryImage}" alt="Delivery truck" loading="lazy"/>
+            <iscontentasset aid="pdp-delivery" />
+
         </div>
     </div>
 

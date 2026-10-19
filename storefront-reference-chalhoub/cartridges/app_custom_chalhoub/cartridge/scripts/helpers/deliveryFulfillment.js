@@ -4,7 +4,6 @@
 var Site = require('dw/system/Site');
 var ProductMgr = require('dw/catalog/ProductMgr');
 var Locale = require('dw/util/Locale');
-var URLUtils = require('dw/web/URLUtils');
 var Logger = require('dw/system/Logger').getLogger('deliveryFulfillment', 'helper');
 
 const VALID_TIERS = {
@@ -104,7 +103,6 @@ function getDeliveryInfo(productId, req) {
             enabled: true,
             success: true,
             error: false,
-            deliveryImage: URLUtils.staticURL('/images/truck.png').toString(),
             deliveryInfo: {
                 tier: result.tier
             }

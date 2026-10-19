@@ -102,11 +102,14 @@
                         <!-- Product Availability -->
                         <isinclude template="product/components/productAvailability" />
 
-                        <div class="row">
-                            <div class="col-12 delivery-details" data-url="${URLUtils.url('DeliveryInfo-Get').toString()}">
-                                <isinclude url="${URLUtils.url('DeliveryInfo-Get', 'productId', product.id)}" />
+                        <isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('enableDeliveryFulfillment')}">
+                            <div class="row">
+                                <div class="col-12 delivery-details" data-url="${URLUtils.url('DeliveryInfo-Get').toString()}">
+                                    <isinclude url="${URLUtils.url('DeliveryInfo-Get', 'productId', product.id)}" />
+                                </div>
                             </div>
-                        </div>
+                        </isif>
+
                         <!-- Applicable Promotions -->
                         <div class="row">
                             <div class="col-12 promotions">

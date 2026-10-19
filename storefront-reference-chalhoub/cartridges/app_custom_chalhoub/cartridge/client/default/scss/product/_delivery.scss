@@ -77,15 +77,14 @@
 
 .delivery-fulfillment__image {
     flex: 0 0 34%;
-    height: 350px;
+    min-height: 350px;
     overflow: hidden;
 }
 
 .delivery-fulfillment__image img {
     display: block;
     width: 100%;
-    height: 100%;
-    min-height: 250px;
+    min-height: 350px;
     object-fit: cover;
     object-position: center;
 }
@@ -180,6 +179,6 @@
     }
 
     .delivery-fulfillment__image img {
-        height: 190px;
+        min-height: 190px;
     }
 }
