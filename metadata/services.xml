@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns="http://www.demandware.com/xml/impex/services/2014-09-26">
+    <service-credential service-credential-id="fulfillment.free.beeceptor.cred">
+        <url>{{ENDPOINT}}/fulfillment</url>
+        <user-id>test</user-id>
+        <password encrypted="true" encryption-type="common.export">WLtWrGuQqX4tpndzng9VQvvd3SZQPc0W9KKu9U51bxomb36eP2j4N/1Xb2njWq09</password>
+    </service-credential>
+
+    <service-profile service-profile-id="fulfillment.free.beeceptor.profile">
+        <timeout-millis>1000</timeout-millis>
+        <rate-limit-enabled>true</rate-limit-enabled>
+        <rate-limit-calls>3</rate-limit-calls>
+        <rate-limit-millis>3000</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>3</cb-calls>
+        <cb-millis>3000</cb-millis>
+    </service-profile>
+
+    <service service-id="fulfillment.free.beeceptor.get">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>deliveryFulFillment</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>true</mock-mode-enabled>
+        <profile-id>fulfillment.free.beeceptor.profile</profile-id>
+        <credential-id>fulfillment.free.beeceptor.cred</credential-id>
+    </service>
+
+</services>

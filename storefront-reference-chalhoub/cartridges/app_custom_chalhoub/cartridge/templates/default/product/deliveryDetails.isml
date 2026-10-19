@@ -1,0 +1,74 @@
+
+<iscomment>
+    Display delivery content only when fulfilment is enabled
+    and the fulfilment service has returned a successful response.
+</iscomment>
+<isif condition="${pdict.enabled && !pdict.error && pdict.deliveryInfo && pdict.deliveryInfo.tier}">
+
+    <div class="delivery-fulfillment">
+        <div class="delivery-fulfillment__content">
+
+            <isif condition="${pdict.deliveryInfo.tier === 'SAME_DAY'}">
+                <div class="delivery-fulfillment__icon sameday-symbol" aria-hidden="true">
+                    <i class="fa fa-bolt delivery-fulfillment__icon-symbol "></i>
+                </div>
+                <div class="delivery-fulfillment__eyebrow sameday-eyebrow">
+                    <isprint value="${Resource.msg('delivery.fulfillment.delivery.option', 'product', null)}" encoding="on" />
+                </div>
+                <h3 class="delivery-fulfillment__title">
+                    <isprint value="${Resource.msg('delivery.fulfillment.sameday.delivery', 'product', null)}" encoding="on" />
+                </h3>
+                <p class="delivery-fulfillment__description">
+                    <isprint value="${Resource.msg('delivery.fulfillment.sameday.msg', 'product', null)}" encoding="on" />
+                </p>
+                <div class="delivery-fulfillment__badge sameday-badge">
+                    <span aria-hidden="true"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                    <isprint value="${Resource.msg('delivery.fulfillment.sameday.badge', 'product', null)}" encoding="on" />
+                </div>
+
+            <iselseif condition="${pdict.deliveryInfo.tier === 'NEXT_DAY'}">
+                <div class="delivery-fulfillment__icon" aria-hidden="true">
+                    <i class="fa fa-truck delivery-fulfillment__icon-symbol" aria-hidden="true"></i>
+                </div>
+                <div class="delivery-fulfillment__eyebrow">
+                    <isprint value="${Resource.msg('delivery.fulfillment.delivery.option', 'product', null)}" encoding="on" />
+                </div>
+
+                <h3 class="delivery-fulfillment__title">
+                    <isprint value="${Resource.msg('delivery.fulfillment.nextday.delivery', 'product', null)}" encoding="on" />
+                </h3>
+                <p class="delivery-fulfillment__description">
+                    <isprint value="${Resource.msg('delivery.fulfillment.nextday.msg', 'product', null)}" encoding="on" />
+                </p>
+                <div class="delivery-fulfillment__badge">
+                    <span aria-hidden="true"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
+                    <isprint value="${Resource.msg('delivery.fulfillment.nextday.badge', 'product', null)}" encoding="on" />
+                </div>
+
+            <iselseif condition="${pdict.deliveryInfo.tier === 'STANDARD'}">
+                <div class="delivery-fulfillment__icon standard-symbol" aria-hidden="true">
+                    <i class="fa fa-cube delivery-fulfillment__icon-symbol" aria-hidden="true"></i>
+                </div>
+                <div class="delivery-fulfillment__eyebrow standard-eyebrow">
+                    <isprint value="${Resource.msg('delivery.fulfillment.delivery.option', 'product', null)}" encoding="on" />
+                </div>
+                <h3 class="delivery-fulfillment__title">
+                    <isprint value="${Resource.msg('delivery.fulfillment.standard.delivery', 'product', null)}" encoding="on" />
+                </h3>
+                <p class="delivery-fulfillment__description">
+                    <isprint value="${Resource.msg('delivery.fulfillment.standard.msg', 'product', null)}" encoding="on" />
+                </p>
+                <div class="delivery-fulfillment__badge standard-badge">
+                    <span aria-hidden="true"><i class="fa fa-shield" aria-hidden="true"></i></span>
+                    <isprint value="${Resource.msg('delivery.fulfillment.standard.badge', 'product', null)}" encoding="on" />
+                </div>
+
+            </isif>
+        </div>
+
+        <div class="delivery-fulfillment__image" aria-hidden="true">
+            <img src="${pdict.deliveryImage}" alt="Delivery truck" loading="lazy"/>
+        </div>
+    </div>
+
+</isif>
